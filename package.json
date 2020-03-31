@@ -1,0 +1,50 @@
+{
+  "name": "codeceptjsmobil",
+  "version": "1.0.0",
+  "description": "Mobil Framework",
+  "main": "index.js",
+  "scripts": {
+    "codeceptjs": "codeceptjs init",
+    "codeceptjs:gherkin": "codeceptjs gherkin:init",
+    "start": "codeceptjs run --features --plugins allure",
+    "test": "codeceptjs run --features --reporter mochawesome",
+    "test:config": "codeceptjs run --grep @config --reporter mochawesome >./log/server.log",
+    "test:adicion": "codeceptjs run --grep @adicion --reporter mochawesome",
+    "test:allure": "codeceptjs run --grep @config --plugins allure",
+    "appium": "appium -a 127.0.0.1 -p 4723 -bp 4724 --chromedriver-executable '%APPDATA%/npm/node_modules/appium/node_modules/appium-android-driver/node_modules/appium-chromedriver/chromedriver/win/chromedriver.exe' --chromedriver-port=9515 --log ./log/ServerAppium.log",
+    "allure": "allure serve report",
+    "format": "prettier --write src/**/*.js",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "gherkin:lint": "node ./node_modules/gherkin-lint/dist/main.js -c ./.gherkin-lintrc.json ./src/features/**"
+  },
+  "keywords": [
+    "webdriver",    
+    "bdd",
+    "testing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elionavarretev/CodeceptJSMOBIL.git"
+  },
+  "author": {
+    "name": "Elio Navarrete",
+    "email": "elionavarretev@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "appium": "^1.17.0",
+    "codeceptjs": "^2.5.0",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.1.1",
+    "webdriver": "5.13.0",
+    "webdriverio": "5.18.5"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-plugin-codeceptjs": "^1.2.0",
+    "gherkin": "^9.0.0",
+    "gherkin-lint": "^3.3.10",
+    "prettier": "^1.19.1"
+  }
+}
