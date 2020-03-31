@@ -1,4 +1,4 @@
-@config
+@first
 Feature: Inicio de sesion
   Como consultora
   Yo quiero entrar al aplicativo
